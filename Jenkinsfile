@@ -14,7 +14,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 sh '''
-                kubectl set image deployment/devops-todo-deployment \
+                minikube kubectl -- set image deployment/devops-todo-deployment \
                 devops-todo=devops-todo:latest
                 '''
             }
